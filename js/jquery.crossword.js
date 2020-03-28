@@ -33,7 +33,7 @@
             //zo
    
 			// initialize some variables
-			var tbl = ['<table id="puzzle">'],
+			var tbl = ['<div id="puzzle">'],
 			    puzzEl = this,
 				clues = $('#puzzle-clues'),
 				clueLiEls,
@@ -217,14 +217,14 @@
 				*/
 				buildTable: function() {
 					for (var i=1; i <= rows; ++i) {
-						tbl.push("<tr>");
+						tbl.push("<div class='row'>");
 							for (var x=1; x <= cols; ++x) {
-								tbl.push('<td data-coords="' + x + ',' + i + '"></td>');		
+								tbl.push('<div class="cell" data-coords="' + x + ',' + i + '"></div>');
 							};
-						tbl.push("</tr>");
+						tbl.push("</div>");
 					};
 
-					tbl.push("</table>");
+					tbl.push("</div>");
 					puzzEl.append(tbl.join(''));
 				},
 				
@@ -234,7 +234,7 @@
 					- Adds tabindexes to <inputs> 
 				*/
 				buildEntries: function() {
-					var puzzCells = $('#puzzle td'),
+					var puzzCells = $('#puzzle .cell'),
 						light,
 						$groupedLights,
 						hasOffset = false,
@@ -269,7 +269,7 @@
 						$groupedLights = $('.entry-' + i);
 						if(!$('.entry-' + i +':eq(0) span').length){
 							$groupedLights.eq(0)
-								.append('<span>' + puzz.data[i].position + '</span>');
+								.append('<span class="number">' + puzz.data[i].position + '</span>');
 						}
 					}	
 					
