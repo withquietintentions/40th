@@ -49,6 +49,7 @@
 
       #puzzle-wrapper {
         overflow: scroll;
+        padding: 26px;
       }
 
       body {
@@ -70,13 +71,14 @@
 
       .cell {
         display: inline-block;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         border: 1px solid rgba(255,0,0,0.2);
         opacity: 0.7;
         position: relative;
         padding: 0;
         margin: 0;
+        font-size: 13px;
         font-family: 'Zilla Slab', serif;
         flex-shrink: 0;
       }
@@ -121,11 +123,15 @@
         text-decoration: line-through;
       }
 
+      #puzzle-clues {
+        width: 500px;
+      }
 
       #puzzle-clues li {
         font-size: 1.2em;
         margin: .3em;
         line-height: 1.6em;
+        cursor: pointer;
       }
 
       ol {
